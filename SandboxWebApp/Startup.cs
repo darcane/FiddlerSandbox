@@ -47,7 +47,7 @@ namespace SandboxWebApp
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

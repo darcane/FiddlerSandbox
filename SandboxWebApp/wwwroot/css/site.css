@@ -35,3 +35,11 @@ body {
         display: none;
     }
 }
+
+.img-blur {
+    filter: blur(4px);
+}
+
+.presentation-list li {
+    font-size: 20px
+}
