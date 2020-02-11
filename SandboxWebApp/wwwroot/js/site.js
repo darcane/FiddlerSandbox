@@ -23,3 +23,32 @@ function CalculateBrand() {
 
 CalculateBrand();
 setInterval(CalculateBrand, 10000);
+
+function AnimateList($listItems, index, callback) {
+    if (index >= $listItems.length) {
+        callback(); 
+        return;
+    }
+
+    $listItems.eq(index).animate({ left: 0, opacity: 1 }, function () {
+        AnimateList($listItems, index + 1, callback);
+    });
+}
+
+function FadeLists($lists, index) {
+    if (index >= $lists.length) index = 0;
+
+    var $currentList = $lists.eq(index);
+    $currentList.fadeIn(()=> {
+        AnimateList(
+            $currentList.find("li"),
+            0,
+            () => {
+                FadeLists($lists, index + 1);
+            }
+        );
+    });
+}
+
+var $allLists = $("ul.animate");
+FadeLists($allLists, 0);

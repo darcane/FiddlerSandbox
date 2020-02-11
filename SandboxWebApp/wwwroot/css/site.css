@@ -43,3 +43,13 @@ body {
 .presentation-list li {
     font-size: 20px
 }
+
+ul.animate {
+    width: 1140px;
+}
+
+ul.animate li {
+    opacity: 0;
+    left: 100%;
+    position: relative;
+}
