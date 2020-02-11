@@ -22,7 +22,7 @@ function CalculateBrand() {
 }
 
 CalculateBrand();
-setInterval(CalculateBrand, 10000);
+setInterval(CalculateBrand, 50000);
 
 function AnimateList($listItems, index, callback) {
     if (index >= $listItems.length) {
