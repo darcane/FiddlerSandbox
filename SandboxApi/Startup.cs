@@ -13,7 +13,7 @@ namespace SandboxApi
             Configuration = configuration;
         }
 
-        private readonly string _allowSpecificOrigins = "_allowSpecificOrigins";
+        private readonly string _allowAllOrigins = "_allowAllOrigins";
 
         public IConfiguration Configuration { get; }
 
@@ -22,8 +22,11 @@ namespace SandboxApi
         {
             services.AddCors(options =>
             {
-                options.AddPolicy(_allowSpecificOrigins,
-                    builder => { builder.WithOrigins("https://fiddlersandbox.azurewebsites.net"); });
+                options.AddPolicy(_allowAllOrigins,
+                    builder => { 
+                        builder.AllowAnyOrigin();
+                        builder.AllowAnyHeader();
+                    });
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -38,10 +41,10 @@ namespace SandboxApi
             }
             else
             {
-                app.UseCors(_allowSpecificOrigins);
                 app.UseHsts();
             }
 
+            app.UseCors(_allowAllOrigins);
             app.UseHttpsRedirection();
             app.UseMvc();
         }
