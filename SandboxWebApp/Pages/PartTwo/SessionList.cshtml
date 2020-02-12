@@ -1,0 +1,36 @@
+﻿@page
+@model SessionListModel
+@{
+    ViewData["Title"] = "SessionList";
+}
+
+<h2>Session List 🎩</h2>
+
+<div class="row">
+    <div class="col-lg-8">
+        <ul class="presentation-list">
+            <li>First Look to a session
+                <ul>
+                    <li>Quick check of <code>ResultCode</code></li>
+                    <li>Check Url and potential Query string</li>
+                    <li>Check body length (in <code>bytes</code>)</li>
+                    <li>Don't forget to add customized columns like <code>Overall_Elapsed</code></li>
+                    <li>Easiest way to check comments</li>
+                </ul>
+            </li>
+            <li>Actions on Session
+                <ul>
+                    <li>All kinds Copy</li>
+                    <li>Compare Sessions</li>
+                    <li>Save for future use</li>
+                    <li>Mark for highlightings</li>
+                    <li>Quick Filters</li>
+                    <li>Replaying Sessions</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-4">
+        <img class="img-responsive" src="~/images/assets/sessionList.png" />
+    </div>
+</div>
