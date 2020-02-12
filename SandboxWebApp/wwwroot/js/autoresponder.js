@@ -2,7 +2,7 @@
 let code;
 let turtle;
 const initialShape =
-  "pu lt 45 fd 80 rt 135 pd fd 40 rt 60 fd 60 rt 60 fd 60 rt 60 fd 40 rt 120 fd 60 lt 60 fd 60 pu rt 120 fd 60 pd fd 40 rt 60 fd 60 rt 60 fd 60 rt 60 fd 40 rt 120 fd 60 lt 60 fd 60 ht";
+  "pu lt 45 fd 80 rt 135 pd fd 40 rt 60 fd 60 rt 60 fd 60 rt 60 fd 40 rt 120 fd 60 lt 60 fd 60 pu rt 120 fd 60 ht";
 
 function setup() {
   editor = select("#editor");
