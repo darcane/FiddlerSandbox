@@ -1,0 +1,22 @@
+﻿@page
+@model AutoResponderModel
+@{
+    ViewData["Title"] = "AutoResponder";
+}
+
+<h2>AutoResponder</h2>
+
+<textarea id="editor" rows="10" cols="92" style="margin:10px"></textarea>
+
+<h4 id="commandName"></h4>
+
+<div class="row">
+    <div class="col-lg-12" id="canvasHolder" ></div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.dom.min.js"></script>
+<script src="~/js/autoresponder.js"></script>
+<script src="~/js/turtle.js"></script>
+<script src="~/js/turtleCommands.js"></script>
