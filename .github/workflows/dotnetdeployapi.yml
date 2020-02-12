@@ -1,4 +1,4 @@
-name: Web Application build & deploy
+name: Web API build & deploy
 
 on:
   push:
@@ -17,12 +17,12 @@ jobs:
       with:
         dotnet-version: 2.2.108
     - name: Build with dotnet
-      run: dotnet build SandboxWebApp --configuration Release
+      run: dotnet build SandboxApi --configuration Release
     - name: dotnet publish
-      run: dotnet publish SandboxWebApp -c Release -o webapp_deploy 
+      run: dotnet publish SandboxApi -c Release -o webapi_deploy
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v1
       with:
-        app-name: fiddlersandbox
-        publish-profile: ${{ secrets.PUBLISH_PROFILE }}
-        package: 'SandboxWebApp/webapp_deploy'
+        app-name: fiddlersandboxapi
+        publish-profile: ${{ secrets.API_PUBLISH_PROFILE }}
+        package: 'SandboxApi/webapi_deploy'
