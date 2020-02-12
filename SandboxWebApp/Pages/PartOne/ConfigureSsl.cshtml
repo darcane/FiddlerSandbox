@@ -4,5 +4,19 @@
     ViewData["Title"] = "ConfigureSsl";
 }
 
-<h2>ConfigureSsl</h2>
+<h2>Configure Fiddler For Decrypt HTTPS Traffic</h2>
 
+<ul>
+    <li>Tools</li>
+    <li>Options</li>
+    <li>HTTPS</li>
+    <li>&#10004; Capture HTTPS CONNECTs</li>
+    <li>&#10003; Decrypt HTTPS traffic <i>(Engine: CertEnroll)</i></li>
+    <li style="color:red">&#10003; Ignore server certificate errors (unsafe)</li>
+</ul>
+
+<h4>Disclaimer</h4>
+<p>Please make sure that: Stop <code>CAPTURING</code> after you are done with the demanded traffic has been captured.</p>
+
+<img src="~/images/assets/toolsOptions.png" />
+<img src="~/images/assets/https.png" />
