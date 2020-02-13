@@ -1,0 +1,46 @@
+﻿@page
+@model NetTraceModel
+@{
+    ViewData["Title"] = "NetTrace";
+}
+
+<h2>NetTrace</h2>
+
+<ul>
+    <li>
+        Fiddler can trace on local both:
+        <ul>
+            <li>WebService calls</li>
+            <li>WCF calls</li>
+        </ul>
+    </li>
+    <li>Easiest to configure on web.config</li>
+</ul>
+
+<h3>Configuration for <code>web.config</code></h3>
+<p><i>Please check actual documentation for more information.</i></p>
+<div>
+    <pre><code>// For .NET applications running on current user account
+    &lt;configuration&gt;
+        &lt;system.net&gt;
+            &lt;defaultProxy&gt;
+                &lt;proxy bypassonlocal=&quot;false&quot; usesystemdefault=&quot;true&quot; /&gt;
+            &lt;/defaultProxy&gt;
+        &lt;/system.net&gt;
+    &lt;/configuration&gt;
+
+// For .NET applications running on a different user account
+    &lt;configuration&gt;
+        &lt;system.net&gt;
+            &lt;defaultProxy&gt;
+                &lt;proxy autoDetect=&quot;false&quot; bypassonlocal=&quot;false&quot; usesystemdefault=&quot;false&quot; proxyaddress=&quot;http://127.0.0.1:8888&quot; /&gt;
+            &lt;/defaultProxy&gt;
+        &lt;/system.net&gt;
+    &lt;/configuration&gt;
+</code></pre>
+</div>
+
+<div>
+    <p>More Info:</p>
+    <a href="https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureDotNETApp" target="_blank">Telerik documentations for Fiddler</a>
+</div>

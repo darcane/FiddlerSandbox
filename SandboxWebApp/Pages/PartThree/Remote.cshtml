@@ -1,0 +1,31 @@
+﻿@page
+@model RemoteModel
+@{
+    ViewData["Title"] = "Remote";
+}
+
+<h2>Remote Debugging</h2>
+
+<h3>Steps as follows</h3>
+<ul class="presentation-list">
+    <li>
+        Setup a "Reverse Proxy"
+        <ul>
+            <li>
+                Run fiddler on Windows machine with default port <code>8888</code><br />
+                <small>May need to enable that port on firewall</small>
+            </li>
+        </ul>
+    </li>
+    <li>Set "Allow remote computers to connect" on Connection Options</li>
+    <li>Find your IP address</li>
+    <li>
+        Add some custom rules via scripting
+        <ul>
+            <li>Adjust <code>OnBeforeRequest()</code></li>
+            <li>
+                <code>if(oSession.host.ToLowerInvariant() == "{your_ip_address}") oSession.host = "{redirect_address}";</code>
+            </li>
+        </ul>
+    </li>
+</ul>
