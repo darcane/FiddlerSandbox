@@ -1,0 +1,63 @@
+﻿@page
+@model ScriptingModel
+@{
+    ViewData["Title"] = "Scripting";
+}
+
+<h2>Scripting and Extending Fiddler</h2>
+
+<div class="row">
+    <div class="col-lg-7">
+        <ul class="presentation-list">
+            <li>
+                Allow Fiddler to be customized and extended
+                <ul>
+                    <li>Adding new rules</li>
+                    <li>Manipulating SESSIONs even more </li>
+                    <li>Adding Custom Menu</li>
+                </ul>
+            </li>
+            <li>
+                Supports
+                <ul>
+                    <li>JScript .NET (Default)</li>
+                    <li>C#</li>
+                </ul>
+            </li>
+            <li>Features <code>FiddlerScript Editor</code> (<kbd>CTRL + R</kbd>)</li>
+        </ul>
+        <div>
+            <h3>Quick Demo</h3>
+            <p>Swedish content request: </p>
+<pre><code>
+    // Handler class
+    public static RulesOption("Request &Swedish Content")
+    var m_Swedish: boolean = false; 
+
+    // OnBeforeRequest
+    if (m_Swedish) {
+        oSession.oRequest["Accept-Language"] = "se";
+    }
+</code></pre>
+            <p>Custom menu:</p>
+<pre><code>
+    // Handler class
+    QuickLinkMenu("&TestMenu")
+    QuickLinkItem("Google Home", "https://www.google.com")
+    QuickLinkItem("Avensia Home", "https://avensia.com")
+    public static function DoTestMenuMenu(sText: String, sAction: String)
+    {
+        Utilities.LaunchHyperlink(sAction);
+    }
+</code></pre>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <img class="img-responsive" src="~/images/assets/scripting.png" />
+    </div>
+</div>
+
+@*<div class="row">
+        <div class="col-lg-8"></div>
+        <div class="col-lg-4"></div>
+    </div>*@
